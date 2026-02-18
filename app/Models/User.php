@@ -9,15 +9,16 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
+    // HasFactory: Permite usar User::factory() para crear usuarios falsos en los Seeders.
+    // Notifiable: Permite enviar notificaciones a este usuario (ej: $user->notify(new InvoicePaid())).
     use HasFactory, Notifiable;
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
+     * $fillable - Campos permitidos para la Asignación Masiva (Mass Assignment).
+     * Solo los campos listados aquí podrán ser rellenados automáticamente al hacer:
+     * User::create($request->all());
+     * Protege la base de datos de campos inyectados maliciosamente (ej: 'is_admin').
      */
-    //Lista de campos que se pueden rellenar con User::create()
     protected $fillable = [
         'dni',
         'name',
@@ -28,11 +29,6 @@ class User extends Authenticatable
         'password',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
-     */
     //Ocultar contraseña al convertir el usuario a JSON/Array
     protected $hidden = [
         'password',
@@ -40,9 +36,8 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
+     * casts() - Mutadores y conversión de tipos de datos.
+     * * Le dice a Laravel cómo debe tratar ciertos campos al leerlos o escribirlos en la BD.
      */
     protected function casts(): array
     {

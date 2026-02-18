@@ -48,14 +48,20 @@
 
         <div class="absolute top-0 right-0 -mt-8 -mr-8 w-24 h-24 bg-brand-gold rounded-full opacity-5 blur-2xl"></div>
 
+        {{-- @error('clave'): Verifica si hay algún error de validación asociado a la clave 'credentials'.
+             En AuthController::login(), si las credenciales fallan, lanzamos un error con esta clave específica. --}}
         @error('credentials')
         <div class="mb-6 bg-red-50 border-l-4 border-red-500 p-4 rounded-r text-sm text-red-700">
             <p class="font-bold">Error de acceso</p>
+            {{-- $message: Variable mágica de Blade que contiene el texto del error que generó el validador --}}
             <p>{{ $message }}</p>
         </div>
         @enderror
 
         <form action="{{ route('login.attempt') }}" method="POST" class="space-y-6 relative z-10">
+            {{-- @csrf: DIRECTIVA DE SEGURIDAD OBLIGATORIA EN LARAVEL.
+                 Genera un campo oculto (<input type="hidden" name="_token" value="...">)
+                 que Laravel usa para verificar que el formulario se envió desde tu web y no desde un sitio malicioso. --}}
             @csrf
 
             <div>

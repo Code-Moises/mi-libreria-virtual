@@ -16,7 +16,7 @@
 <script>
     setTimeout(function(){
         window.location.href = "{{ route('invoice.show', $invoice->id) }}";
-    }, 3000); // 3000 milisegundos = 3 segundos
+    }, 3000);
 </script>
 </body>
 </html>

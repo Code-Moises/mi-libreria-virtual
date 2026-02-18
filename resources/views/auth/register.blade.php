@@ -49,6 +49,9 @@
         <div class="absolute top-0 right-0 -mt-10 -mr-10 w-32 h-32 bg-brand-gold rounded-full opacity-5 blur-3xl"></div>
 
         <form action="{{ route('register.attempt') }}" method="POST" class="space-y-6 relative z-10">
+            {{-- @csrf: DIRECTIVA DE SEGURIDAD OBLIGATORIA EN LARAVEL.
+                 Genera un campo oculto (<input type="hidden" name="_token" value="...">)
+                 que Laravel usa para verificar que el formulario se envió desde tu web y no desde un sitio malicioso. --}}
             @csrf
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -57,6 +60,8 @@
                     <input type="text" name="dni" value="{{ old('dni') }}" required
                            class="w-full px-5 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-gold/50 focus:border-brand-gold transition-all"
                            placeholder="12345678A">
+                    {{-- @error('clave'): Verifica si hay algún error de validación asociado a la clave 'dni'.
+                        En AuthController::Register(), si las credenciales fallan, lanzamos un error con esta clave específica. --}}
                     @error('dni') <span class="text-red-500 text-xs mt-1 block ml-1">{{ $message }}</span> @enderror
                 </div>
 
