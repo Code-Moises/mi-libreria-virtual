@@ -73,8 +73,11 @@ class InvoiceController extends Controller
                     $totalBase += $lineTotal;
                     $totalTax += $lineTax;
 
-                    // RESTAR STOCK: Muy importante hacerlo dentro de la transacción
+                    // restar stock
                     $book->decrement('stock', $qty);
+
+                    // sumar a la cuenta de vendidos
+                    $book->increment('sales_count', $qty);
 
                     // Guardamos los datos de la línea para insertarlos después de crear la cabecera
                     $linesData[] = [

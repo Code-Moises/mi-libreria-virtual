@@ -30,10 +30,10 @@ class AuthController extends Controller
         // 1. Validación de los datos que llegan del formulario.
         // Si alguna regla falla, Laravel detiene la ejecución y redirige automáticamente de vuelta con los errores.
         $validate = $request->validate([
-            'dni' => 'required|unique:users,dni|max:20',
-            'name' => 'required|string|max:100',
+            'dni' => 'required|unique:users,dni|max:9',
+            'name' => 'required|string|max:50',
             'lastname' => 'required|string|max:100',
-            'username' => 'required|unique:users,username|max:100',
+            'username' => 'required|unique:users,username|max:15',
             'email' => 'required|email|unique:users,email',
             'addrs' => 'required|string|max:255',
             // La regla 'confirmed' exige que en el formulario exista un campo llamado 'password_confirmation' que coincida exactamente.
