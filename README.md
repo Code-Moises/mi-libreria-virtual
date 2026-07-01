@@ -217,6 +217,6 @@ GitHub: https://github.com/Code-Moises
 
 ---
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto ha sido desarrollado con fines educativos y como práctica de desarrollo Full-Stack utilizando Laravel.
