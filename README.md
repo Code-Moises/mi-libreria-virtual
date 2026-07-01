@@ -1,59 +1,222 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Mi Librería Virtual
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Blade](https://img.shields.io/badge/Blade-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
 
-## About Laravel
+> Aplicación web Full-Stack desarrollada con Laravel para la gestión de una librería virtual. El proyecto incluye catálogo de libros, carrito de compras, autenticación de usuarios y un flujo completo de compra con generación de facturas.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Descripción
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**Mi Librería Virtual** es una aplicación desarrollada como proyecto de aprendizaje para profundizar en el ecosistema Laravel y en el desarrollo de aplicaciones Full-Stack utilizando el patrón MVC.
 
-## Learning Laravel
+Además de la gestión de un catálogo de libros, la aplicación implementa un flujo de compra completo con autenticación, carrito basado en sesiones, control de stock y generación de facturas, simulando el funcionamiento de un pequeño comercio electrónico.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+El objetivo principal fue consolidar conocimientos sobre arquitectura Laravel, Eloquent ORM, bases de datos relacionales y organización de proyectos siguiendo buenas prácticas de desarrollo.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+# Funcionalidades
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Gestión del catálogo
 
-### Premium Partners
+- Visualización del catálogo de libros
+- Consulta del detalle de cada libro
+- Filtrado y búsqueda
+- Sección de libros destacados
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Carrito de compras
 
-## Contributing
+- Añadir libros al carrito
+- Modificar cantidades
+- Eliminar productos
+- Persistencia del carrito mediante sesiones
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Gestión de usuarios
 
-## Code of Conduct
+- Registro de usuarios
+- Inicio de sesión
+- Protección mediante middleware
+- Gestión de datos personales necesarios para la compra
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Proceso de compra
 
-## Security Vulnerabilities
+- Checkout completo
+- Generación de facturas
+- Actualización automática del stock
+- Persistencia de pedidos
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+# Stack Tecnológico
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Backend
+
+- PHP
+- Laravel
+- Eloquent ORM
+
+## Frontend
+
+- Blade Templates
+- HTML5
+- CSS3
+- JavaScript
+- Vite
+
+## Base de Datos
+
+- MySQL
+
+## Herramientas
+
+- Composer
+- NPM
+
+---
+
+# Arquitectura
+
+El proyecto sigue la arquitectura MVC propuesta por Laravel, manteniendo una clara separación entre la lógica de negocio, el acceso a datos y la interfaz de usuario.
+
+```text
+Cliente
+   │
+   ▼
+Routes (web.php)
+   │
+   ▼
+Controllers
+   │
+   ▼
+Models (Eloquent)
+   │
+   ▼
+MySQL
+```
+
+La lógica relacionada con el carrito de compra se encuentra desacoplada mediante un servicio específico, favoreciendo un código más limpio y mantenible.
+
+---
+
+# Estructura del Proyecto
+
+```text
+app/
+ ├── Http/
+ │    └── Controllers/
+ ├── Models/
+ └── Services/
+
+database/
+ └── migrations/
+
+resources/
+ └── views/
+
+routes/
+ └── web.php
+
+public/
+```
+
+---
+
+# Instalación
+
+Clona el repositorio:
+
+```bash
+git clone https://github.com/Code-Moises/mi-libreria-virtual.git
+cd mi-libreria-virtual
+```
+
+Instala las dependencias:
+
+```bash
+composer install
+npm install
+```
+
+Crea el archivo de configuración:
+
+```bash
+cp .env.example .env
+```
+
+Genera la clave de la aplicación:
+
+```bash
+php artisan key:generate
+```
+
+Configura la conexión a la base de datos dentro del archivo `.env`.
+
+Ejecuta las migraciones:
+
+```bash
+php artisan migrate
+```
+
+Inicia el servidor:
+
+```bash
+php artisan serve
+```
+
+Compila los recursos:
+
+```bash
+npm run dev
+```
+
+La aplicación estará disponible en:
+
+```text
+http://localhost:8000
+```
+
+---
+
+# Conceptos Practicados
+
+Durante el desarrollo del proyecto se trabajó con:
+
+- Arquitectura MVC
+- Laravel Routing
+- Controladores
+- Eloquent ORM
+- Migraciones
+- Relaciones entre modelos
+- CRUD completo
+- Blade Templates
+- Formularios y validación
+- Middleware de autenticación
+- Gestión de sesiones
+- Carrito de compras
+- Flujo de checkout
+- Organización de proyectos Laravel
+
+---
+
+# Autor
+
+**Moisés Becerra**
+
+Full-Stack Developer
+
+Portfolio: https://moisesbecerra.dev
+
+LinkedIn: https://www.linkedin.com/in/moises-becerra-morales/
+
+GitHub: https://github.com/Code-Moises
+
+---
+
+## 📄 Licencia
+
+Este proyecto ha sido desarrollado con fines educativos y como práctica de desarrollo Full-Stack utilizando Laravel.
